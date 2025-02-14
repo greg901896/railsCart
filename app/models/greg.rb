@@ -1,0 +1,2 @@
+class Greg < ApplicationRecord
+end

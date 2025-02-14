@@ -1,0 +1,16 @@
+
+<tr>
+      <td><%= link_to '投給這位', vote_candidate_path(candidate), data: { turbo_method: :post, turbo_confirm: "確認要投給這位候選人嗎   
+        " } , class: "btn btn-danger btn-xs"%></td>
+    
+      <td><%= candidate.name %>(年齡：<%= candidate.age %> 歲)</td>
+      <td><%= candidate.party %></td>
+      <td><%= candidate.politics %></td>
+      <td><%= candidate.vote_logs.size %></td>
+      <td>
+        <%= link_to "編輯", edit_candidate_path(candidate) %>
+        <%= link_to '刪除', candidate_path(candidate), data: { turbo_method: :delete, turbo_confirm: "確認   
+        刪除？" } %>
+      </td>
+</tr>
+    
