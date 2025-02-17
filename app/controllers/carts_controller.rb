@@ -7,7 +7,7 @@ class CartsController < ApplicationController
       end
     
     def destroy
-        session[:cart9487] = nil
+        session[:cart9486] = nil
         redirect_to products_path, notice: "購物車已清空"
       end
     
