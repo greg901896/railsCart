@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :gregs
   resources :candidates do
     member do
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
 
   get "test" , to:"products#test"
   
-
+  
   resources :products do 
     member do 
       post :plus_cart
@@ -29,7 +30,7 @@ Rails.application.routes.draw do
     end
   end
   get "up" => "rails/health#show", as: :rails_health_check
-
+  root "products#index"
   # Defines the root path route ("/")
   # root "posts#index"
 end

@@ -7,6 +7,8 @@ class ProductsController < ApplicationController
     @product.save
     redirect_to products_path, notice: "已加入!"
   end 
+  
+
   def index
     @products = Product.all
   end
