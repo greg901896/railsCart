@@ -8,6 +8,7 @@
       <td>描述</td>
       <td>售價</td>
       <td>處理</td>
+      <td>購物車數量</td>
     </tr>
   </thead>
   <tbody>
@@ -24,6 +25,7 @@
         <%= button_to '刪除', product, method: "delete", data: { confirm: "確定刪除?" }, class: "btn btn-xs btn-default" %>
         
       </td>
+      <td><%= product.count_cart%></td>
     </tr>
     <% end %>
   </tbody>

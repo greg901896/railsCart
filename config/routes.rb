@@ -3,14 +3,21 @@ Rails.application.routes.draw do
   resources :candidates do
     member do
       post :vote
+      
       end
     end
   
   resources :newgregs do
     end
 
+  get "test" , to:"products#test"
+  
 
   resources :products do 
+    member do 
+      post :plus_cart
+      post :test 
+    end
     end
 
   resources :users do

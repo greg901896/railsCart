@@ -15,28 +15,20 @@
   <tbody>
   <% if @check.present? %>
   <% @check.each do |product| %>
- 
     <tr>
       <td><%= product.title %></td>
-      <td><%= product.count_cart %></td>
-      <td><%= product.price %></td>
-      <td><%= product.price * product.count_cart %></td>
-      
+      <td><%= product.description %></td>
     </tr>
-  
-    
   <% end %>
-  <tfoot>
-    <tr>
-    <td colspan="3">總計</td>
-    <td><%= @total_price %></td>
-    
-    </tfoot>
 <% else %>
 
 <% end %>
 </tbody>
-  
+  <tfoot>
+  <tr>
+    <td colspan="3">總計</td>
+    
+  </tfoot>
 </table>
 
 <%= link_to '繼續選購', products_path, class: "btn btn-default" %>
