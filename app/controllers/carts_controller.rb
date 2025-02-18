@@ -17,8 +17,8 @@ class CartsController < ApplicationController
       end
     
     def show
-      @check = Product.where("count_cart > ?", 0)
-      @total_price = Product.where("count_cart > ?", 0).sum("count_cart * price")
+      @check = Product.where("user_id = ?", current_user.id)
+      @total_price = Product.where("user_id = ?", current_user.id).sum("count_cart * price")
 
     end
 

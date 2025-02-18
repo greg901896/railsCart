@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!
   before_action :find_product, only: [:edit, :update, :destroy, :plus_cart]
   #before_action :plus_cart , only:[:test]
   def test 
@@ -10,10 +11,13 @@ class ProductsController < ApplicationController
   
 
   def index
-    @products = Product.all
+    
+    @products = Product.where(user_id: current_user.id)
   end
   def plus_cart
-    @check = Product.where("count_cart > ?", 0)
+    @product.user_id = current_user.id 
+    @check = Product.where("user_id = ?", current_user.id)
+
     #@product.increment(:count_cart)
     #@product.save
   redirect_to products_path, notice: "已加入!"
@@ -24,6 +28,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    @product.user_id = current_user.id
     if @product.save
       redirect_to products_path, notice: "新增商品完成"
     else
@@ -56,6 +61,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:title, :description, :price)
+    params.require(:product).permit(:title, :description, :price,:user_id)
   end
 end
