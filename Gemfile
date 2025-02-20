@@ -56,10 +56,32 @@ gem 'sidekiq'
 
 gem 'devise', '~> 4.9', '>= 4.9.4'
 
-group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri windows ]
-end
+gem 'rails-i18n', '~> 7.0.0'
+
+gem 'aasm', '~> 5.5'
+
+gem 'rest-client'
+
+gem 'pagy'
+
+gem 'rack-attack'
+
+gem 'identity_cache'
+
+gem 'cityhash'    
+
+gem 'pry', '~> 0.15.2'
+
+gem 'dalli' 
+
+gem 'whenever',require: false
+
+gem 'byebug', '~> 11.1', '>= 11.1.3'
+
+gem 'rspec', '~> 3.13'
+
+
+
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
@@ -71,6 +93,14 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
+
+group :development, :test do
+  gem "rspec-rails"          # RSpec 測試框架 (必須安裝)
+  gem "factory_bot_rails"    # 幫助建立測試資料
+  gem "faker"                # 隨機產生測試資料
+  gem "debug", platforms: %i[ mri windows ]
+end
+
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
