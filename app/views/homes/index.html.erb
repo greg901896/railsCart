@@ -1,38 +1,40 @@
 <div style="display: flex; gap: 10px;">
-<%= link_to '首頁', homes_path, class: "btn btn-primary" %>
-<%= link_to '新增商品:', new_product_path, class: "btn btn-primary" %>
-<%= link_to '購物車', cart_path, class: "btn btn-success" %>
-
-<% if user_signed_in? %>
-  <%= button_to "登出", destroy_user_session_path, method: :delete, class: "btn btn-success", style: "display: inline-block;" %>
-  <%= link_to "個人資料", edit_user_registration_path, class: "btn btn-success" %>
-<% else %>
-  <%= link_to "註冊", new_user_registration_path, class: "btn btn-success" %>
-  <%= link_to "登入", new_user_session_path, class: "btn btn-success" %>
-<% end %>
+  <%= link_to t("home"), homes_path, class: "btn btn-primary" %>
+  <%= link_to t("cart"), cart_path, class: "btn btn-success" %>
+  <% if user_signed_in? %>
+    <%= button_to t("signout"), destroy_user_session_path, method: :delete, class: "btn btn-success", style: "display: inline-block;" %>
+    <%= link_to t("profile"), edit_user_registration_path, class: "btn btn-success" %>
+  <% else %>
+    <%= link_to t("registration"), new_user_registration_path, class: "btn btn-success" %>
+    <%= link_to t("signin"), new_user_session_path, class: "btn btn-success" %>
+  <% end %>
 </div>
-
+<br>
+<div style="display: flex; gap: 10px;">
+  <%= link_to "English", url_for(locale: :en), class: "btn btn-success" %>
+  <%= link_to "中文", url_for(locale: :zhTW), class: "btn btn-success" %>
+</div>
 <dl class="row">
-  <dt class="col-sm-3">Description lists</dt>
-  <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
+  <dt class="col-sm-3"><%= t("a1")%></dt>
+  <dd class="col-sm-9"><%= t("b1")%></dd>
 
-  <dt class="col-sm-3">Term</dt>
+  <dt class="col-sm-3"><%= t("a2")%>ß</dt>
   <dd class="col-sm-9">
-    <p>Definition for the term.</p>
-    <p>And some more placeholder definition text.</p>
+    <p><%= t("b2")%></p>
+    <p><%= t("b3")%></p>
   </dd>
 
-  <dt class="col-sm-3">Another term</dt>
-  <dd class="col-sm-9">This definition is short, so no extra paragraphs or anything.</dd>
+  <dt class="col-sm-3"><%= t("a3")%></dt>
+  <dd class="col-sm-9"><%= t("b4")%></dd>
 
-  <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
-  <dd class="col-sm-9">This can be useful when space is tight. Adds an ellipsis at the end.</dd>
+  <dt class="col-sm-3 text-truncate"><%= t("a4")%></dt>
+  <dd class="col-sm-9"><%= t("b5")%></dd>
 
-  <dt class="col-sm-3">Nesting</dt>
+  <dt class="col-sm-3"><%= t("a5")%></dt>
   <dd class="col-sm-9">
     <dl class="row">
-      <dt class="col-sm-4">Nested definition list</dt>
-      <dd class="col-sm-8">I heard you like definition lists. Let me put a definition list inside your definition list.</dd>
+      <dt class="col-sm-4"><%= t("b6")%></dt>
+      
     </dl>
   </dd>
 </dl>

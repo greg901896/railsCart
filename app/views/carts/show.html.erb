@@ -1,15 +1,15 @@
 
 
- <h1><%= link_to '清空購物車', cart_path, data: { turbo_method: :delete, turbo_confirm: "確認   
+ <h1><%= link_to t("deleteCart"), cart_path, data: { turbo_method: :delete, turbo_confirm: "確認   
         刪除？" }, class: "btn btn-default btn-danger"  %></h1>
 
 <table class="table table-hover">
   <thead>
     <tr>
-      <td>商品名稱</td>
-      <td>數量</td>
-      <td>單價</td>
-      <td>小計</td>
+      <td><%=t("projectName")%></td>
+      <td><%=t("projectCount")%></td>
+      <td><%=t("siglePrice")%></td>
+      <td><%=t("total")%></td>
     </tr> 
   </thead>
   <tbody>
@@ -28,7 +28,7 @@
   <% end %>
   <tfoot>
     <tr>
-    <td colspan="3">總計</td>
+    <td colspan="3"><%= t("sum")%></td>
     <td><%= @total_price %></td>
     
     </tfoot>
@@ -39,5 +39,5 @@
   
 </table>
 
-<%= link_to '繼續選購', products_path, class: "btn btn-default" %>
-<%= link_to '結帳', '#', class: "btn btn-default" %>
+<%= link_to t("continue"), products_path, class: "btn btn-default" %>
+<%= link_to t("checkout"), '#', class: "btn btn-default" %>

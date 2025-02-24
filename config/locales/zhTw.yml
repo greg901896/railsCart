@@ -1,0 +1,61 @@
+zhTW:
+  hello: "哈囉，世界"
+  welcome: "歡迎來到我的應用程式"
+  home: "首頁"
+  addProject: "新增商品"
+  cart: "購物車"
+  signout: "登出"
+  profile: "個人資料"
+    
+  projectName: "商品名稱" #商品頁上
+  describe: "描述"
+  price:  "價格"
+  action: "處理"
+  cartCount: "購物車數量"
+  registration: "註冊"
+  signin: "登入"
+
+  projectName: "商品名稱" #商品頁下
+  projectDes: "描述"
+  projectPrice: "售價"
+  projectMov: "處理"
+  projectCount: "數量"
+  addCart: "放到購物車"
+  edit: "編輯"
+  delete: "刪除"
+
+  deleteCart : "清空購物車" #購物車
+  #projectName
+  #projectCount
+  siglePrice: "單價"
+  total: "小計"
+  sum: "總計"
+  continue: "繼續選購"
+  checkout: "結帳"
+
+
+
+
+
+
+  a1: "描述列表"
+  a2: "學期"
+  a3: "另一個術語"
+  a4: "截斷的術語被截斷"
+  a5: "嵌套"
+
+  b1: "描述清單非常適合定義術語。"
+  b2: "該術語的定義。"
+  b3: "還有一些佔位定義文字。"
+  b4: "這個定義很短，所以沒有多餘的段落或任何內容。"
+  b5: "當空間緊張時這會很有用。在末尾加上省略號。"
+  b6: "嵌套定義列表"
+
+  errors:
+    not_found: "找不到頁面"
+
+    
+
+
+
+    

@@ -29,3 +29,50 @@
 
 en:
   hello: "Hello world"
+  home: "home"
+  addProject: "add project"
+  cart: "cart"
+  signout: "sign out"
+  profile: "profile"
+    
+  projectName: "project name"
+  describe: "describe"
+  price:  "price"
+  action: "action"
+  cartCount: "Count"
+  registration: "registration"
+  signin: "signin"
+
+  projectName: "Project Name"
+  projectDes: "Describe"
+  projectPrice: "Price"
+  projectMov: "mov"
+  projectCount: "count"
+  addCart: "add cart"
+
+  deleteCart : "delete cart" #購物車
+  #projectName
+  #projectCount
+  siglePrice: "sigle price"
+  total: "total"
+  sum: "sum"
+  continue: "continue"
+  checkout: "checkout"
+
+  edit: "edit"
+  delete: "delete"
+
+  a1: "Description lists" #home
+  a2: "Term"
+  a3: "Another term"
+  a4: "Truncated term is truncated"
+  a5: "Nesting"
+
+  b1: "A description list is perfect for defining terms."
+  b2: "Definition for the term."
+  b3: "And some more placeholder definition text."
+  b4: "This definition is short, so no extra paragraphs or anything."
+  b5: "This can be useful when space is tight. Adds an ellipsis at the end."
+  b6: "Nested definition list"
+  b7: "I heard you like definition lists. Let me put a definition list inside your definition list."
+

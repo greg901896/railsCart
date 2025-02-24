@@ -1,24 +1,29 @@
-<h1><%= I18n.t "hello"%></h1>
-<div style="display: flex; gap: 10px;">
-  <%= link_to '新增商品:', new_product_path, class: "btn btn-primary" %>
-  <%= link_to '購物車', cart_path, class: "btn btn-success" %>
 
+<div style="display: flex; gap: 10px;">
+  <%= link_to t("home"), homes_path, class: "btn btn-primary" %>
+  <%= link_to t("addProject"), new_product_path, class: "btn btn-primary" %>
+  <%= link_to t("cart"), cart_path, class: "btn btn-success" %>
   <% if user_signed_in? %>
-    <%= button_to "登出", destroy_user_session_path, method: :delete, class: "btn btn-success", style: "display: inline-block;" %>
-    <%= link_to "個人資料", edit_user_registration_path, class: "btn btn-success" %>
+    <%= button_to t("signout"), destroy_user_session_path, method: :delete, class: "btn btn-success", style: "display: inline-block;" %>
+    <%= link_to t("profile"), edit_user_registration_path, class: "btn btn-success" %>
   <% else %>
-    <%= link_to "註冊", new_user_registration_path, class: "btn btn-success" %>
-    <%= link_to "登入", new_user_session_path, class: "btn btn-success" %>
+    <%= link_to t("registration"), new_user_registration_path, class: "btn btn-success" %>
+    <%= link_to t("signin"), new_user_session_path, class: "btn btn-success" %>
   <% end %>
+</div>
+<br>
+<div style="display: flex; gap: 10px;">
+  <%= link_to "English", url_for(locale: :en), class: "btn btn-success" %>
+  <%= link_to "中文", url_for(locale: :zhTW), class: "btn btn-success" %>
 </div>
 <table class="table table-hover">
   <thead>
     <tr>
-      <td>商品名稱</td>
-      <td>描述</td>
-      <td>售價</td>
-      <td>處理</td>
-      <td>購物車數量</td>
+      <td><%= t("projectName")%></td>
+      <td><%=t("projectDes")%></td>
+      <td><%=t("projectPrice")%></td>
+      <td><%=t("projectMov")%></td>
+      <td><%=t("projectCount")%></td>
     </tr>
   </thead>
   <tbody>
@@ -26,14 +31,14 @@
 
     <tr>
       <td>
-        <%= button_to '放到購物車', add_cart_path(product), method: :post, class: "btn btn-xs btn-danger" %>
+        <%= button_to t("addCart"), add_cart_path(product), method: :post, class: "btn btn-xs btn-danger" %>
         <%= product.title %>
       </td>
       <td><%= product.description %>
       <td><%= product.price %></td>
       <td>
-        <%= link_to '編輯', edit_product_path(product), class: "btn btn-xs btn-default" %>
-        <%= button_to '刪除', product, method: "delete", data: { confirm: "確定刪除?" }, class: "btn btn-xs btn-default" %>
+        <%= link_to t("edit"), edit_product_path(product), class: "btn btn-xs btn-default" %>
+        <%= button_to t("delete"), product, method: "delete", data: { confirm: "確定刪除?" }, class: "btn btn-xs btn-default" %>
         
       </td>
       <td><%= product.count_cart%></td>
