@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   
   resources :newgregs do
     end
-
+  resources :homes do
+  end
   get "test" , to:"products#test"
   
   
