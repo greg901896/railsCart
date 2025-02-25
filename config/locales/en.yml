@@ -34,6 +34,7 @@ en:
   cart: "cart"
   signout: "sign out"
   profile: "profile"
+  myProject: "my product"
     
   projectName: "project name"
   describe: "describe"
@@ -58,6 +59,8 @@ en:
   sum: "sum"
   continue: "continue"
   checkout: "checkout"
+
+  addProduct: "add product" #pro/new
 
   edit: "edit"
   delete: "delete"

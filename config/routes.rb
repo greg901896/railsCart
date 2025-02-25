@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   resources :newgregs do
     end
   resources :homes do
+    collection do
+      get 't1'
+      get 't2'
+    end
   end
   get "test" , to:"products#test"
   

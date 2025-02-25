@@ -1,7 +1,8 @@
-zhTW:
+zh-TW:
   hello: "哈囉，世界"
   welcome: "歡迎來到我的應用程式"
   home: "首頁"
+  myProject: "我的商品"
   addProject: "新增商品"
   cart: "購物車"
   signout: "登出"
@@ -34,7 +35,7 @@ zhTW:
   checkout: "結帳"
 
 
-
+  addProduct: "新增商品" #pro/new
 
 
 

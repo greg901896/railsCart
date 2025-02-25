@@ -1,6 +1,6 @@
+<h1><%= @product %></h1>
 <div style="display: flex; gap: 10px;">
-  <%= link_to t("home"), homes_path, class: "btn btn-primary" %>
-  <%= link_to t("cart"), cart_path, class: "btn btn-success" %>
+  <%= link_to t("myProject"), products_path+session[:lan], class: "btn btn-success" %>
   <% if user_signed_in? %>
     <%= button_to t("signout"), destroy_user_session_path, method: :delete, class: "btn btn-success", style: "display: inline-block;" %>
     <%= link_to t("profile"), edit_user_registration_path, class: "btn btn-success" %>
@@ -10,9 +10,10 @@
   <% end %>
 </div>
 <br>
+
 <div style="display: flex; gap: 10px;">
-  <%= link_to "English", url_for(locale: :en), class: "btn btn-success" %>
-  <%= link_to "中文", url_for(locale: :zhTW), class: "btn btn-success" %>
+  <%= link_to "English", t1_homes_path, class: "btn btn-success" %>
+  <%= link_to "中文", t2_homes_path, class: "btn btn-success" %>
 </div>
 <dl class="row">
   <dt class="col-sm-3"><%= t("a1")%></dt>
@@ -38,3 +39,4 @@
     </dl>
   </dd>
 </dl>
+
