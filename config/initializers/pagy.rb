@@ -208,14 +208,19 @@
 #                 { locale: 'xyz',  # not built-in
 #                   filepath: 'path/to/pagy-xyz.yml',
 #                   pluralize: lambda{ |count| ... } )
+# Pagy::DEFAULT[:limit] = 1# items per page
 
+# Pagy::DEFAULT[:size]  = 9 # nav bar links
+Pagy::DEFAULT[:limit] = 10 # items per page
+Pagy::DEFAULT[:size]  = 9  # nav bar links
+require 'pagy/extras/overflow'
+
+Pagy::DEFAULT[:overflow] = :last_page
 
 # I18n extra: uses the standard i18n gem which is ~18x slower using ~10x more memory
 # than the default pagy internal i18n (see above)
 # See https://ddnexus.github.io/pagy/docs/extras/i18n
 # require 'pagy/extras/i18n'
-Pagy::DEFAULT[:limit] = 1
-Pagy::DEFAULT[:items] = 1
-Pagy::DEFAULT[:size] = [1, 4, 4, 1] 
+
 # When you are done setting your own default freeze it, so it will not get changed accidentally
 Pagy::DEFAULT.freeze

@@ -8,6 +8,9 @@ Rails.application.routes.draw do
       end
     end
   
+  match 'photos', to: 'photos#show', via: [:get, :post]
+
+
   resources :newgregs do
     end
   resources :homes do
@@ -27,6 +30,11 @@ Rails.application.routes.draw do
     end
 
   resources :users do
+  end
+
+
+  resources :articles do
+    resources :comments, shallow: true
   end
 
   resource :cart, only:[:show, :destroy] do

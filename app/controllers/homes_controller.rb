@@ -1,8 +1,9 @@
 class HomesController < ApplicationController
-
+    include Pagy::Backend
     
     def index
-        @pagy, @products = pagy(Product.all)
+        @pagy, @records = pagy(Product.all)
+        
     end
 
     def t1

@@ -1,4 +1,6 @@
-<h1><%= @product %></h1>
+
+
+<%= Product%>
 <div style="display: flex; gap: 10px;">
   <%= link_to t("myProject"), products_path+session[:lan], class: "btn btn-success" %>
   <% if user_signed_in? %>
@@ -40,3 +42,7 @@
   </dd>
 </dl>
 
+<h1><%== pagy_nav(@pagy) %></h1>
+<br>
+<%= @pagy.inspect%>
+<br>

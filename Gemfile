@@ -62,7 +62,7 @@ gem 'aasm', '~> 5.5'
 
 gem 'rest-client'
 
-gem 'pagy'
+gem 'pagy', '~> 9.3' # omit patch digit
 
 gem 'rack-attack'
 
