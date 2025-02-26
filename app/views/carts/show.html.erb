@@ -15,7 +15,7 @@
   <tbody>
   <% if @check.present? %>
   <% @check.each do |product| %>
- 
+    <% if product.count_cart > 0 %>
     <tr>
       <td><%= product.title %></td>
       <td><%= product.count_cart %></td>
@@ -24,7 +24,7 @@
       
     </tr>
   
-    
+    <% end %>
   <% end %>
   <tfoot>
     <tr>
@@ -39,5 +39,5 @@
   
 </table>
 
-<%= link_to t("continue"), products_path, class: "btn btn-default" %>
-<%= link_to t("checkout"), '#', class: "btn btn-default" %>
+<%= link_to t("back"), products_path+@loc, class: "btn btn-warning"  %>
+<%= link_to t("checkout"), checkout_cart_path+@loc, class: "btn btn-default btn-danger"  %>

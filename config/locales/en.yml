@@ -78,4 +78,8 @@ en:
   b5: "This can be useful when space is tight. Adds an ellipsis at the end."
   b6: "Nested definition list"
   b7: "I heard you like definition lists. Let me put a definition list inside your definition list."
-
+  back: "back"
+  submit: "submit"
+  delete_order: "delete order"
+  ch_off: "discount"
+  ch_delivery: "freight"

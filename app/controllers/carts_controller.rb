@@ -8,7 +8,12 @@ class CartsController < ApplicationController
     
         redirect_to products_path, notice: "已加入購物車"
       end
+      
+    def checkout
+      @check = Product.where("user_id = ?", current_user.id)
+      @total_price = Product.where("user_id = ?", current_user.id).sum("count_cart * price")
 
+    end
     
 
     def destroy

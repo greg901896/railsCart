@@ -7,8 +7,6 @@ Rails.application.routes.draw do
       
       end
     end
-  
-  match 'photos', to: 'photos#show', via: [:get, :post]
 
 
   resources :newgregs do
@@ -40,8 +38,12 @@ Rails.application.routes.draw do
   resource :cart, only:[:show, :destroy] do
     collection do
       post :add, path:'add/:id'
+      get :checkout 
     end
   end
+  
+
+
   get "up" => "rails/health#show", as: :rails_health_check
   root "homes#index"
   # Defines the root path route ("/")

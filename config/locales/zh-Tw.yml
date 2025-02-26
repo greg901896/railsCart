@@ -4,7 +4,7 @@ zh-TW:
   home: "首頁"
   myProject: "我的商品"
   addProject: "新增商品"
-  cart: "購物車"
+  cart: "我的購物車"
   signout: "登出"
   profile: "個人資料"
     
@@ -52,6 +52,11 @@ zh-TW:
   b5: "當空間緊張時這會很有用。在末尾加上省略號。"
   b6: "嵌套定義列表"
 
+  delete_order: "刪除訂單"
+  ch_off: "優惠券"
+  ch_delivery: "運費"
+  back: "返回"
+  submit: "送出訂單"
   errors:
     not_found: "找不到頁面"
 
