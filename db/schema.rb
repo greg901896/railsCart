@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_02_17_141220) do
+ActiveRecord::Schema[7.1].define(version: 2025_02_27_032756) do
   create_table "candidates", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "party"
@@ -20,6 +20,23 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_17_141220) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "vote_logs_count"
+  end
+
+  create_table "checkouts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "total_price"
+    t.string "delivery"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "children", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_children_on_ancestry"
   end
 
   create_table "gregs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

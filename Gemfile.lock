@@ -82,6 +82,8 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
+    ancestry (4.3.3)
+      activerecord (>= 5.2.6)
     ar_transaction_changes (1.1.9)
       activerecord (>= 5.2.0)
     autoprefixer-rails (10.4.19.0)
@@ -388,6 +390,7 @@ PLATFORMS
 
 DEPENDENCIES
   aasm (~> 5.5)
+  ancestry (~> 4.3, >= 4.3.3)
   bootsnap
   bootstrap-sass (~> 3.4.1)
   byebug (~> 11.1, >= 11.1.3)
