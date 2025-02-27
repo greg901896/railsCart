@@ -7,7 +7,9 @@ Rails.application.routes.draw do
       
       end
     end
-
+  
+  resources :orders do
+  end
 
   resources :newgregs do
     end

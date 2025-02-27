@@ -60,10 +60,21 @@ zh-TW:
   final_price: "訂單總金額"
   my_order: "我的訂單"
 
+  order_number: "訂單編號"
+  order_time: "訂單時間"
+  
+  check: "查看"
+  option: "選項"
 
 
 
-  errors:
+
+
+
+
+
+
+  errors: 
     not_found: "找不到頁面"
 
     

@@ -85,3 +85,7 @@ en:
   ch_delivery: "freight"
   final_price: "total price"
   my_order: "my order"
+  order_number: "order number"
+  order_time: "order time"
+  option: "option"
+  check: "check"
