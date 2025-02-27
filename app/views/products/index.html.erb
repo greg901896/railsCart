@@ -3,6 +3,7 @@
   <%= link_to t("home"), homes_path+@loc, class: "btn btn-primary" %>
   <%= link_to t("addProject"), new_product_path+@loc, class: "btn btn-primary" %>
   <%= link_to t("cart"), cart_path+@loc, class: "btn btn-success" %>
+  <%= link_to t("my_order"), "#", class: "btn btn-success" %>
   <% if user_signed_in? %>
     <%= button_to t("signout"), destroy_user_session_path, method: :delete, class: "btn btn-success", style: "display: inline-block;" %>
     <%= link_to t("profile"), edit_user_registration_path, class: "btn btn-success" %>

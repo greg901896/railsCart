@@ -57,6 +57,12 @@ zh-TW:
   ch_delivery: "運費"
   back: "返回"
   submit: "送出訂單"
+  final_price: "訂單總金額"
+  my_order: "我的訂單"
+
+
+
+
   errors:
     not_found: "找不到頁面"
 

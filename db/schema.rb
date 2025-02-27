@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_02_27_032756) do
+ActiveRecord::Schema[7.1].define(version: 2025_02_27_080513) do
   create_table "candidates", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "party"
@@ -30,19 +30,20 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_27_032756) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "children", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "name"
-    t.string "type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "ancestry"
-    t.index ["ancestry"], name: "index_children_on_ancestry"
-  end
-
   create_table "gregs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "tel"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "order_items", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "title"
+    t.integer "price"
+    t.integer "count_cart"
+    t.integer "user_id"
+    t.string "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

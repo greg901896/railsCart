@@ -83,3 +83,5 @@ en:
   delete_order: "delete order"
   ch_off: "discount"
   ch_delivery: "freight"
+  final_price: "total price"
+  my_order: "my order"

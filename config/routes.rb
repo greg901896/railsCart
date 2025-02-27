@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     collection do
       get 't1'
       get 't2'
+      get "t3"
     end
   end
   get "test" , to:"products#test"
@@ -38,7 +39,8 @@ Rails.application.routes.draw do
   resource :cart, only:[:show, :destroy] do
     collection do
       post :add, path:'add/:id'
-      get :checkout 
+      get :checkout
+      get :submit 
     end
   end
   

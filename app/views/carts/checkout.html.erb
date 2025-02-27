@@ -1,5 +1,3 @@
-
-
 <h1><%= link_to t("delete_order"), cart_path, data: { turbo_method: :delete, turbo_confirm: "確認   
 刪除？" }, class: "btn btn-default btn-danger"  %></h1>
 
@@ -32,19 +30,19 @@
 <td colspan="2"><%= t("ch_delivery")%></td>
 <td> 60</td>
 <td><%= @total_price+60 %></td>
+<% @final_price = @total_price+60%>
 </tr>
 <tr>
 <td colspan="2"><%= t("ch_off")%></td>
 <td>0</td>
-<td><%= @total_price %></td>
+<td><%= @final_price %></td>
 </tr>
 <tr>
-<td colspan="3"><%= t("sum")%></td>
-<td><%= @total_price %></td>
+<td colspan="3"><%= t("final_price")%></td>
+<td><%= @final_price%></td>
 </tr>
 </tfoot>
-
-
+<% session[:total] = @final_price %>
 <% else %>
 <% end %>
 </tbody>
@@ -52,4 +50,4 @@
 </table>
 
 <%= link_to t("back"), cart_path+@loc, class: "btn btn-success" %>
-<%= link_to t("submit"), checkout_cart_path, class: "btn btn-default btn-danger" %>
+<%= link_to t("submit"), submit_cart_path, class: "btn btn-default btn-danger" %>

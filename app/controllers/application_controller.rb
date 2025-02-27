@@ -3,12 +3,15 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :init_cart
   before_action :language 
+  before_action :new_price 
   include CartsHelper
   include Pagy::Backend
 
   private
   
-
+  def new_price
+    session[:total] ||= 0
+  end 
 
   def language
     session[:lan] ||= ""
