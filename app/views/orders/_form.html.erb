@@ -1,0 +1,9 @@
+<%= simple_form_for product do |f| %>
+    <%= f.input :title, placeholder: t("projectName") %>
+    <%= f.input :description, placeholder: t("describe") %>
+    <%= f.input :price, placeholder: t("price") %>
+    <%= f.submit class: "btn btn-default btn-primary" %>
+    <br>
+    <% current_user.id%>
+    
+  <% end %>

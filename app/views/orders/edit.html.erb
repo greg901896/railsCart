@@ -1,0 +1,38 @@
+<h1>我的訂單</h1>
+
+
+<table class="table table-hover">
+<thead>
+<tr>
+<td><%=t("projectName")%></td>
+<td><%=t("projectCount")%></td>
+<td><%=t("siglePrice")%></td>
+<td><%=t("total")%></td>
+</tr> 
+</thead>
+<tbody>
+
+<% @new_check.each do |product| %>
+
+<tr>
+<td><%= product.title %></td>
+<td><%= product.count_cart %></td>
+<td><%= product.price %></td>
+<td><%= product.price * product.count_cart %></td>
+
+</tr>
+
+
+<% end %>
+<tfoot>
+<tr>
+<td colspan="3"><%= t("sum")%></td>
+<td><%= @total_price %></td>
+
+</tfoot>
+
+</tbody>
+
+</table>
+
+<%= link_to t("back"), products_path+@loc, class: "btn btn-warning"  %>
