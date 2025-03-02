@@ -29,7 +29,7 @@
 
     <tr>
       <td>
-        <%= button_to t("addCart"), add_cart_path(product), method: :post, class: "btn btn-xs btn-danger" %>
+        <%= button_to t("addCart"), test_products_path(product), class: "btn btn-xs btn-danger" %>
         <%= product.title %>
       </td>
       <td><%= product.description %>
@@ -39,9 +39,10 @@
         <%= button_to t("delete"), product, method: "delete", data: { confirm: "確定刪除?" }, class: "btn btn-xs btn-default" %>
         
       </td>
-      <td><%= product.count_cart%></td>
+       <td><%= product.count_cart%></td>
     </tr>
     
     <% end %>
   </tbody>
+
 </table>

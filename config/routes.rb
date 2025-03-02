@@ -26,8 +26,11 @@ Rails.application.routes.draw do
   resources :products do 
     member do 
       post :plus_cart
-      post :test 
+      
     end
+    collection do
+       post :test , path: "test/:id"
+    end 
     end
 
   resources :users do

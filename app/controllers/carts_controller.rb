@@ -1,14 +1,13 @@
 class CartsController < ApplicationController
-    def add
-      @product = Product.find_by(id: params[:id])
-      @product.increment(:count_cart)
-      @product.save
-        #current_cart.add_item(params[:id])
-        #session[:cart948] = current_cart.serialize
+    before_action :find_product , only: [:add]
     
-        redirect_to products_path, notice: "已加入購物車"
-      end
-      
+    
+    def add #刪除購物車
+     @product.count_cart = 0
+     @product.save
+     redirect_to cart_path 
+    end
+    
     def checkout
       @check = Product.where("user_id = ?", current_user.id)
       @total_price = Product.where("user_id = ?", current_user.id).sum("count_cart * price")
@@ -36,8 +35,8 @@ class CartsController < ApplicationController
     end
 
     def destroy
-        session[:cart948] = nil
-        redirect_to products_path, notice: "購物車已清空"
+    
+        
       end
     
     def show
@@ -46,4 +45,10 @@ class CartsController < ApplicationController
 
     end
 
+    private
+    def find_product
+      puts "Params ID: #{params[:id]}"
+      @product = Product.find_by(id: params[:id])
+      redirect_to products_path, notice: "無此商品" unless @product
+    end
 end

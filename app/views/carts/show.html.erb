@@ -9,6 +9,7 @@
       <td><%=t("projectName")%></td>
       <td><%=t("projectCount")%></td>
       <td><%=t("siglePrice")%></td>
+      <td><%=t("option")%></td>
       <td><%=t("total")%></td>
     </tr> 
   </thead>
@@ -20,6 +21,8 @@
       <td><%= product.title %></td>
       <td><%= product.count_cart %></td>
       <td><%= product.price %></td>
+      
+      <td><%= button_to t("delete"), add_cart_path(product), class:"btn btn-outline-warning"%></td>
       <td><%= product.price * product.count_cart %></td>
       
     </tr>
@@ -28,7 +31,7 @@
   <% end %>
   <tfoot>
     <tr>
-    <td colspan="3"><%= t("sum")%></td>
+    <td colspan="4"><%= t("sum")%></td>
     <td><%= @total_price %></td>
     
     </tfoot>
@@ -38,6 +41,6 @@
 </tbody>
   
 </table>
-
+<h1></h1>
 <%= link_to t("back"), products_path+@loc, class: "btn btn-warning"  %>
 <%= link_to t("checkout"), checkout_cart_path+@loc, class: "btn btn-default btn-danger"  %>

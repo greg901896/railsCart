@@ -7,11 +7,10 @@ class ProductsController < ApplicationController
     @product.increment(:count_cart)
     @product.save
     redirect_to products_path, notice: "已加入!"
-  end 
+  end
   
 
   def index
-    
     @products = Product.where(user_id: current_user.id)
   end
   def plus_cart
@@ -56,6 +55,7 @@ class ProductsController < ApplicationController
   
   private
   def find_product
+    
     @product = Product.find_by(id: params[:id])
     redirect_to products_path, notice: "無此商品" unless @product
   end
