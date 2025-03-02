@@ -11,7 +11,9 @@ class OrdersController < ApplicationController
 
     def find_order
         @order = OrderItem.find_by(id: params[:id])
-       
+        @check = Product.where("user_id = ?", current_user.id)
+        @total_price = OrderItem.where("user_id = ?", current_user.id).where(order_id: params[:id]).sum("count_cart * price")
+
     end
 
 
