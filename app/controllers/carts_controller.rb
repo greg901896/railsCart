@@ -25,13 +25,17 @@ class CartsController < ApplicationController
       @check.each do |product|
         OrderItem.create!(
           title: product.title,
-          price: @final_price,
+          price: product.price,
           count_cart: product.count_cart,
           user_id: @user_id,
           order_id: @cr_id
         )
       end 
-      redirect_to checkout_cart_path 
+      @check = Product.where("user_id = ?", current_user.id).where("count_cart > 0 ")
+      @check.each do |product|
+        product.update(count_cart: 0)
+      end 
+      redirect_to products_path 
     end
 
     def destroy

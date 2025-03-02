@@ -37,9 +37,7 @@ Rails.application.routes.draw do
   end
 
 
-  resources :articles do
-    resources :comments, shallow: true
-  end
+
 
   resource :cart, only:[:show, :destroy] do
     collection do
