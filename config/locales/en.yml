@@ -89,3 +89,7 @@ en:
   order_time: "order time"
   option: "option"
   check: "check"
+
+  chinese: "Chinese"
+  english: "English"
+  russian: "Russian"

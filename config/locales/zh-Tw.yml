@@ -8,6 +8,9 @@ zh-TW:
   signout: "登出"
   profile: "個人資料"
     
+  chinese: "中文"
+  english: "英文"
+  russian: "俄文"
   projectName: "商品名稱" #商品頁上
   describe: "描述"
   price:  "價格"
