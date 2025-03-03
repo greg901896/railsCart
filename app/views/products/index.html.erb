@@ -18,6 +18,7 @@
   <thead>
     <tr>
       <td><%= t("projectName")%></td>
+      <td><%= t("type")%></td>
       <td><%=t("projectDes")%></td>
       <td><%=t("projectPrice")%></td>
       <td><%=t("projectMov")%></td>
@@ -32,12 +33,12 @@
         <%= button_to t("addCart"), test_products_path(product), class: "btn btn-xs btn-danger" %>
         <%= product.title %>
       </td>
+      <td><%= product.type %>
       <td><%= product.description %>
       <td><%= product.price %></td>
       <td>
         <%= link_to t("edit"), edit_product_path(product), class: "btn btn-xs btn-default" %>
-        <%= button_to t("delete"), product, method: "delete", data: { confirm: "確定刪除?" }, class: "btn btn-xs btn-default" %>
-        
+        <%= button_to t("delete"), product_path(product), method: "delete", data: { confirm: "確定刪除?" }, class: "btn btn-xs btn-default" %>
       </td>
        <td><%= product.count_cart%></td>
     </tr>

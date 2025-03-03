@@ -23,11 +23,39 @@ class ProductsController < ApplicationController
   end 
   def new
     @product = Product.new
+    
   end
 
   def create
+    
+    # @product = Product.new(product_params)
+    # @product.user_id = current_user.id
+    # if @product.type == "RealProduct"
+    #   @real = RealProduct.new(product_params)
+    #   @real.update!(user_id: current_user.id,stock: 30)
+    #   if real.save
+    #     redirect_to products_path, notice: "新增商品完成"
+    #   else
+    #     render :new
+    #   end
+    # end
+    # else
+    #   @digital = DigitalProduct.new(product_params)
+    #   @digital.update!(user_id: current_user.id,stock: 30)
+    #   if real.save
+    #     redirect_to products_path, notice: "新增商品完成"
+    #   else
+    #     render :new
+    #   end
+    # end
     @product = Product.new(product_params)
     @product.user_id = current_user.id
+    if @product.type == "RealProduct"
+      @product.stock = 30
+    elsif @product.type == "DigitalProduct"
+      @product.url = @product.description
+    end
+    
     if @product.save
       redirect_to products_path, notice: "新增商品完成"
     else
@@ -61,6 +89,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:title, :description, :price,:user_id)
+    params.require(:product).permit(:title, :description, :price,:user_id ,:type)
   end
 end 

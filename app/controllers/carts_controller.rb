@@ -28,8 +28,12 @@ class CartsController < ApplicationController
           price: product.price,
           count_cart: product.count_cart,
           user_id: @user_id,
-          order_id: @cr_id
+          order_id: @cr_id,
+          stock: product.stock.presence || nil, # 預設 stock 為 0
+          url: product.url.presence || nil  # 預設 url 為 "N/A"
+          
         )
+        
       end 
       @check = Product.where("user_id = ?", current_user.id).where("count_cart > 0 ")
       @check.each do |product|

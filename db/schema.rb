@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_02_27_080513) do
+ActiveRecord::Schema[7.1].define(version: 2025_03_03_060548) do
   create_table "candidates", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "party"
@@ -46,6 +46,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_27_080513) do
     t.string "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "stock"
+    t.string "url"
   end
 
   create_table "products", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -56,6 +58,9 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_27_080513) do
     t.datetime "updated_at", null: false
     t.integer "count_cart", default: 0
     t.integer "user_id"
+    t.string "type"
+    t.integer "stock"
+    t.string "url"
   end
 
   create_table "stores", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
