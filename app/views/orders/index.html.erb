@@ -13,7 +13,7 @@
 </thead>
 <tbody>
 <% if @check.present? %>
-<% @check.each do |product| %>
+<% @check.reverse.each do |product| %>
 <tr>
 <td><%= product.id %></td>
 <td><%= product.created_at %></td>

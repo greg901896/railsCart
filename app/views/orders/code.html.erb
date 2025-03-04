@@ -1,0 +1,35 @@
+
+
+<h1><%= link_to t("my_code"), "#", data: { turbo_method: :delete }, class: "btn btn-default btn-danger"  %></h1>
+<table class="table table-hover">
+<thead>
+<tr>
+<td><%=t("order_number")%></td>
+<td><%=t("product_name")%></td>
+<td><%=t("code")%></td>
+<td><%=t("order_time")%></td>
+
+</tr> 
+</thead>
+<tbody>
+<% if @key.present? %>
+<% @key.each do |product| %>
+<tr>
+<td><%= product.order_id %></td>
+<td><%= product.title %></td>
+<td><%= product.title_code %></td>
+<td><%= product.created_at %></td>
+
+</tr>
+
+<% end %>
+<% end %>
+<tfoot>
+<tr>
+
+
+</tbody>
+
+</table>
+
+<%= link_to t("back"), products_path+@loc, class:"btn btn-primary"  %>

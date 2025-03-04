@@ -3,7 +3,6 @@ class ProductsController < ApplicationController
   before_action :find_product, only: [:edit, :update, :destroy, :plus_cart]
   # before_action :newstock , only: [:test,:index]
   #before_action :plus_cart , only:[:test]
-  
   def test 
     @product = Product.find_by(id: params[:id])
     if @product.stock > 0
@@ -54,11 +53,10 @@ class ProductsController < ApplicationController
     end
     
     if @product.type == "DigitalProduct"
-      a1 = (1..10).to_a.each do |i|
+      a1 = (1..20).to_a.each do |i|
         Productkey.create!(
           title: @product.title,
           title_code: @product.id.to_s+"#{i}",
-          
           )
       end
     end
@@ -77,14 +75,12 @@ class ProductsController < ApplicationController
 
   def destroy
     @product.destroy
-    
+    total = Productkey.where(title: @product.title).destroy_all
     redirect_to products_path, notice: "商品已刪除"
   end
 
-  
   private
   def find_product
-    
     @product = Product.find_by(id: params[:id])
     redirect_to products_path, notice: "無此商品" unless @product
   end

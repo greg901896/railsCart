@@ -8,12 +8,12 @@ class OrdersController < ApplicationController
     def edit
     end
 
-    def find_order
-        
-        @check = Product.where("user_id = ?", current_user.id)
-        @total_price = OrderItem.where("user_id = ?", current_user.id).where(order_id: params[:id]).sum("count_cart * price")
-
+    def code
+        @key = Productkey.where("user_id = ?",current_user.id)
     end
 
-
+    def find_order
+        @check = Product.where("user_id = ?", current_user.id)
+        @total_price = OrderItem.where("user_id = ?", current_user.id).where(order_id: params[:id]).sum("count_cart * price")
+    end
 end

@@ -20,4 +20,6 @@ RSpec.describe Cart, type: :model do
   it "新畫面查看訂單"
   it "商品頁順序問題"
   
+  it "product_key : 訂單編號 代碼 時間"
+  it "新增欄位：訂單編號"
 end

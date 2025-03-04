@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     end
   
   resources :orders do
+    collection do
+      get "code"
+    end
   end
 
   resources :newgregs do
@@ -35,8 +38,6 @@ Rails.application.routes.draw do
 
   resources :users do
   end
-
-
 
 
   resource :cart, only:[:show, :destroy] do

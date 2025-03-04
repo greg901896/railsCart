@@ -13,23 +13,24 @@
 <tbody>
 <% if @check.present? %>
 <% @check.each do |product| %>
+<% if product.type == "RealProduct" && product.count_cart > 0%>
+  <% @delivery = 60 %>
+<% end %>
 <% if product.count_cart > 0 %>
 <tr>
 <td><%= product.title %></td>
 <td><%= product.count_cart %></td>
 <td><%= product.price * product.count_cart %></td>
-
 <td></td>
 </tr>
-
 <% end %>
 <% end %>
 <tr>
 <tfoot>
 
 <td colspan="2"><%= t("ch_delivery")%></td>
-<td> 60</td>
-<td><%= @total_price+60 %></td>
+<td> <%= @delivery%></td>
+<td><%= @total_price+@delivery %></td>
 <% @final_price = @total_price+60%>
 </tr>
 <tr>
