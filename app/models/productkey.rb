@@ -1,0 +1,2 @@
+class Productkey < ApplicationRecord
+end

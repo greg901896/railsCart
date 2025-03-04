@@ -93,6 +93,8 @@ en:
   chinese: "Chinese"
   english: "English"
   russian: "Russian"
-
+  name: "name"
   type: "type"
   code: "code"
+  stock: "stock"
+  my_code: "my code"

@@ -59,7 +59,7 @@ ru:
 
   order_number: "Номер заказа"
   order_time: "Время заказа"
-
+  name: "Имя"
   check: "Посмотреть"
   option: "Опции"
   chinese: "Китайский"

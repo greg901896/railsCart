@@ -72,7 +72,10 @@ zh-TW:
   type: "類別"
 
   code: "代碼"
+  name: "名稱"
 
+  stock: "庫存"
+  my_code: "我的序號"
 
 
 

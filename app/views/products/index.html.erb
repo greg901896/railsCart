@@ -4,6 +4,7 @@
   <%= link_to t("addProject"), new_product_path+@loc, class: "btn btn-primary" %>
   <%= link_to t("cart"), cart_path+@loc, class: "btn btn-success" %>
   <%= link_to t("my_order"), orders_path+@loc, class: "btn btn-success" %>
+  <%= link_to t("my_code"), orders_path+@loc, class: "btn btn-success" %>
   <% if user_signed_in? %>
     <%= button_to t("signout"), destroy_user_session_path, method: :delete, class: "btn btn-success", style: "display: inline-block;" %>
     <%= link_to t("profile"), edit_user_registration_path, class: "btn btn-success" %>
@@ -13,7 +14,6 @@
   <% end %>
 </div>
 <br>
-
 <table class="table table-hover">
   <thead>
     <tr>
@@ -22,7 +22,7 @@
       <td><%=t("projectDes")%></td>
       <td><%=t("projectPrice")%></td>
       <td><%=t("projectMov")%></td>
-      <td><%=t("projectCount")%></td>
+      <td><%=t("stock")%></td>
     </tr>
   </thead>
   <tbody>
@@ -40,7 +40,7 @@
         <%= link_to t("edit"), edit_product_path(product), class: "btn btn-xs btn-default" %>
         <%= button_to t("delete"), product_path(product), method: "delete", data: { confirm: "確定刪除?" }, class: "btn btn-xs btn-default" %>
       </td>
-       <td><%= product.count_cart%></td>
+       <td><%= product.stock%></td>
     </tr>
     
     <% end %>
