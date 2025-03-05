@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_04_042627) do
+ActiveRecord::Schema[7.1].define(version: 2025_03_04_082851) do
   create_table "add_orderid_to_productkeys", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "order_id"
     t.datetime "created_at", null: false
@@ -64,6 +64,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_04_042627) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "order_id"
+    t.bigint "product_id", null: false
+    t.index ["product_id"], name: "index_productkeys_on_product_id"
   end
 
   create_table "products", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -118,6 +120,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_04_042627) do
     t.index ["store_id"], name: "index_ware_houses_on_store_id"
   end
 
+  add_foreign_key "productkeys", "products"
   add_foreign_key "vote_logs", "candidates"
   add_foreign_key "ware_houses", "products"
   add_foreign_key "ware_houses", "stores"

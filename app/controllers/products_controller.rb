@@ -22,6 +22,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.where(user_id: current_user.id)
+    @uuu = SecureRandom.uuid
   end
 
   def plus_cart
@@ -56,7 +57,9 @@ class ProductsController < ApplicationController
       a1 = (1..20).to_a.each do |i|
         Productkey.create!(
           title: @product.title,
-          title_code: @product.id.to_s+"#{i}",
+          # title_code: @product.id.to_s+"#{i}",
+          title_code: SecureRandom.uuid,
+          product_id: @product.id
           )
       end
     end
@@ -75,7 +78,7 @@ class ProductsController < ApplicationController
 
   def destroy
     @product.destroy
-    total = Productkey.where(title: @product.title).destroy_all
+    # total = Productkey.where(title: @product.title).destroy_all
     redirect_to products_path, notice: "商品已刪除"
   end
 

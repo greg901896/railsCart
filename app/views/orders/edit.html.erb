@@ -6,7 +6,6 @@
 <td><%=t("projectName")%></td>
 <td><%=t("projectCount")%></td>
 <td><%=t("siglePrice")%></td>
-<td><%=t("code")%></td>
 <td><%=t("total")%></td>
 </tr> 
 </thead>
@@ -18,7 +17,6 @@
 <td><%= product.title %></td>
 <td><%= product.count_cart %></td>
 <td><%= product.price %></td>
-<td><%= product.url %></td>
 
 <td></td>
 
@@ -28,7 +26,7 @@
 <% end %>
 <tfoot>
 <tr>
-<td colspan="4"><%= t("sum")%></td>
+<td colspan="3"><%= t("sum")%></td>
 <td><%= @total_price %></td>
 
 </tfoot>
