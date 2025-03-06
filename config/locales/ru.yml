@@ -32,6 +32,9 @@ ru:
   deleteCart: "Очистить корзину" # Корзина
   #projectName
   #projectCount
+  stock: "Склад"
+  language: "Язык"
+  type: "Тип"
   siglePrice: "Цена за единицу"
   total: "Промежуточный итог"
   sum: "Итого"

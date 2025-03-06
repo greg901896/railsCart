@@ -31,7 +31,7 @@
 <td colspan="2"><%= t("ch_delivery")%></td>
 <td> <%= @delivery%></td>
 <td><%= @total_price+@delivery %></td>
-<% @final_price = @total_price+60%>
+<% @final_price = @total_price+@delivery%>
 </tr>
 <tr>
 <td colspan="2"><%= t("ch_off")%></td>
