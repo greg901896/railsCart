@@ -1,3 +1,6 @@
+require 'rest-client'
+require 'nokogiri'
+
 class ProductsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_product, only: [:edit, :update, :destroy, :plus_cart]
@@ -24,8 +27,10 @@ class ProductsController < ApplicationController
     @products = Product.where(user_id: current_user.id)
     @uuu = SecureRandom.uuid
   end
-
+  
+  # binding.pry 
   def plus_cart
+    # binding.pry 
     @product.user_id = current_user.id 
     @check = Product.where("user_id = ?", current_user.id)
     #@product.increment(:count_cart)
@@ -80,6 +85,19 @@ class ProductsController < ApplicationController
     @product.destroy
     # total = Productkey.where(title: @product.title).destroy_all
     redirect_to products_path, notice: "商品已刪除"
+  end
+
+  def total_news
+    # 使用 RestClient 抓取新聞網頁
+    response = RestClient.get('https://udn.com/news/breaknews/1')
+    doc = Nokogiri::HTML(response.body)
+
+    # 假設新聞標題在 h2 標籤中
+    #@news_titles = doc.css('h1, h2, h3, h4, h5, h6').map(&:text)
+    @news_titles = doc.css('div.story-list__text h2 a').map(&:text)
+
+    # 渲染 total_news 頁面
+    render 'total_news'
   end
 
   private

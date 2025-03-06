@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :gregs
+  
+  get 'products/total_news', to: 'products#total_news'
+  
   resources :candidates do
     member do
       post :vote

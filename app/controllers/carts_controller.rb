@@ -49,6 +49,7 @@ class CartsController < ApplicationController
       @check.each do |product|
         product.update(count_cart: 0)
       end 
+      binding.pry
       redirect_to products_path 
     end
 

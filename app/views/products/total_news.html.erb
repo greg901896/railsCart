@@ -1,0 +1,15 @@
+<h1>最新新聞標題</h1>
+
+<ul>
+  <% @news_titles.each do |title| %>
+    <li><%= title %></li>
+    <br>
+  <% end %>
+</ul>
+
+
+<ul>
+    <%= @doc%>
+</ul>
+
+<%= link_to '返回商品列表', products_path, class: "btn btn-default" %>

@@ -60,7 +60,7 @@ gem 'rails-i18n', '~> 7.0.0'
 
 gem 'aasm', '~> 5.5'
 
-gem 'rest-client'
+gem 'rest-client', '~> 2.1'
 
 gem 'pagy', '~> 9.3' # omit patch digit
 
@@ -76,7 +76,6 @@ gem 'dalli'
 
 gem 'whenever',require: false
 
-gem 'byebug', '~> 11.1', '>= 11.1.3'
 
 gem 'rspec', '~> 3.13'
 
@@ -100,6 +99,8 @@ group :development, :test do
   gem "factory_bot_rails"    # 幫助建立測試資料
   gem "faker"                # 隨機產生測試資料
   gem "debug", platforms: %i[ mri windows ]
+  gem 'byebug', '~> 11.1', '>= 11.1.3'
+  gem 'pry-byebug'
 end
 
 
