@@ -1,4 +1,18 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
+// 自訂導航列字體大小
+.navbar-nav .nav-link {
+  font-size: 1.5rem; // 調整字體大小
+}
+
+// 自訂表格字體大小
+.table td, .table th {
+  font-size: 1.5rem; // 調整字體大小
+}
+
+// 自訂按鈕字體大小
+.btn {
+  font-size: 1.7rem; // 調整按鈕字體大小
+}
 

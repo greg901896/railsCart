@@ -1,23 +1,9 @@
 
 
-<%= Product%>
-<div style="display: flex; gap: 10px;">
-  <%= link_to t("myProject"), products_path+session[:lan], class: "btn btn-success" %>
-  <% if user_signed_in? %>
-    <%= button_to t("signout"), destroy_user_session_path, method: :delete, class: "btn btn-success", style: "display: inline-block;" %>
-    <%= link_to t("profile"), edit_user_registration_path, class: "btn btn-success" %>
-  <% else %>
-    <%= link_to t("registration"), new_user_registration_path, class: "btn btn-success" %>
-    <%= link_to t("signin"), new_user_session_path, class: "btn btn-success" %>
-  <% end %>
-</div>
+
 <br>
 
-<div style="display: flex; gap: 10px;">
-  <%= link_to t("english"), t1_homes_path, class: "btn btn-success" %>
-  <%= link_to t("chinese"), t2_homes_path, class: "btn btn-success" %>
-  <%= link_to t("russian"), t3_homes_path, class: "btn btn-success" %>
-</div>
+
 <dl class="row">
   <dt class="col-sm-3"><%= t("a1")%></dt>
   <dd class="col-sm-9"><%= t("b1")%></dd>
@@ -42,8 +28,9 @@
     </dl>
   </dd>
 </dl>
-
+<!--
 <h1><%== pagy_nav(@pagy) %></h1>
 <br>
 <%= @pagy.inspect%>
 <br>
+-->
