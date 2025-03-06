@@ -1,33 +1,35 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header">
+      <h2><%= t("page_title") %></h2>
+    </div>
+    <div class="card-body">
+      <dl class="row">
+        <dt class="col-sm-3"><%= t("a1") %></dt>
+        <dd class="col-sm-9"><%= t("b1") %></dd>
 
+        <dt class="col-sm-3"><%= t("a2") %></dt>
+        <dd class="col-sm-9">
+          <p><%= t("b2") %></p>
+          <p><%= t("b3") %></p>
+        </dd>
 
+        <dt class="col-sm-3"><%= t("a3") %></dt>
+        <dd class="col-sm-9"><%= t("b4") %></dd>
 
-<br>
+        <dt class="col-sm-3 text-truncate"><%= t("a4") %></dt>
+        <dd class="col-sm-9"><%= t("b5") %></dd>
 
-
-<dl class="row">
-  <dt class="col-sm-3"><%= t("a1")%></dt>
-  <dd class="col-sm-9"><%= t("b1")%></dd>
-
-  <dt class="col-sm-3"><%= t("a2")%>ß</dt>
-  <dd class="col-sm-9">
-    <p><%= t("b2")%></p>
-    <p><%= t("b3")%></p>
-  </dd>
-
-  <dt class="col-sm-3"><%= t("a3")%></dt>
-  <dd class="col-sm-9"><%= t("b4")%></dd>
-
-  <dt class="col-sm-3 text-truncate"><%= t("a4")%></dt>
-  <dd class="col-sm-9"><%= t("b5")%></dd>
-
-  <dt class="col-sm-3"><%= t("a5")%></dt>
-  <dd class="col-sm-9">
-    <dl class="row">
-      <dt class="col-sm-4"><%= t("b6")%></dt>
-      
-    </dl>
-  </dd>
-</dl>
+        <dt class="col-sm-3"><%= t("a5") %></dt>
+        <dd class="col-sm-9">
+          <dl class="row">
+            <dt class="col-sm-4"><%= t("b6") %></dt>
+          </dl>
+        </dd>
+      </dl>
+    </div>
+  </div>
+</div>
 <!--
 <h1><%== pagy_nav(@pagy) %></h1>
 <br>
