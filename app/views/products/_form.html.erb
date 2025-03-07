@@ -2,7 +2,7 @@
     <%= f.input :title,label: t("name"), placeholder: t("projectName") %>
     <%= f.input :description,label: t("description"), placeholder: t("describe") %>
     <%= f.input :price,label: t("price"), placeholder: t("price") %>
-    <%= f.input :type,label: t("type"), placeholder: t("type") %>
+    <%= f.input :type, as: :select, collection: [[t("digitalproduct"), "DigitalProduct"], [t("realprodcut"), "RealProduct"]], label: t("type"), include_blank: t("select_type"), input_html: { class: "form-control" } %>
 
     <%= f.submit class: "btn btn-default btn-primary" %>
     <br>

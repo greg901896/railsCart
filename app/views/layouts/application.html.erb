@@ -66,6 +66,9 @@
               <%= link_to t("signin"), new_user_session_path, class: "nav-link" %>
             </li>
           <% end %>
+          <li class="nav-item">
+            <%= link_to t("news"), products_total_news_path+session[:lan], class: "nav-link" %>
+          </li>
         </ul>
       </div>
     </nav>

@@ -50,7 +50,7 @@ class CartsController < ApplicationController
         product.update(count_cart: 0)
       end 
       # binding.pry
-      redirect_to products_path 
+      redirect_to products_path , notice: t("finish")
     end
 
     def destroy

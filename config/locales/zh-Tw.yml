@@ -36,7 +36,7 @@ zh-TW:
   sum: "總計"
   continue: "繼續選購"
   checkout: "結帳"
-
+  finish: "訂單完成"
 
   addProduct: "新增商品" #pro/new
   
@@ -79,8 +79,9 @@ zh-TW:
   product_name: "商品名稱"
 
   language: "語言"
-
-
+  news: "新聞"
+  realprodcut: "實體商品"
+  digitalproduct: "電子商品"
   errors: 
     not_found: "找不到頁面"
 
