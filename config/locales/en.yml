@@ -64,7 +64,7 @@ en:
 
   edit: "edit"
   delete: "delete"
-
+  description: "description"
   a1: "Description lists" #home
   a2: "Term"
   a3: "Another term"
@@ -104,4 +104,4 @@ en:
   news: "news"
   realprodcut: "real product"
   digitalproduct: "digital product"
-  
+  select_type: "select type"

@@ -88,16 +88,34 @@ class ProductsController < ApplicationController
   end
 
   def total_news
-    # 使用 RestClient 抓取新聞網頁
     response = RestClient.get('https://udn.com/news/breaknews/1')
+    # response1 = RestClient.get('https://udn.com/news/story/7252/8604553?from=udn-ch1_breaknews-1-0-news')
+    # @news_titles1 = doc.css("p").map(&:text) 
     doc = Nokogiri::HTML(response.body)
-
-    # 假設新聞標題在 h2 標籤中
     #@news_titles = doc.css('h1, h2, h3, h4, h5, h6').map(&:text)
     @news_titles = doc.css('div.story-list__text h2 a').map(&:text)
+    @news_href = doc.css('div.story-list__text h2 a').map { |a| a['href'] }
+    
+    @a1 = {}
+    for i in (1..@news_titles.size)
+      @a1[@news_titles[i]]=@news_href[i]
+    end 
 
-    # 渲染 total_news 頁面
+    # binding.pry
     render 'total_news'
+  end
+
+  def titles 
+    response1 = RestClient.get('https://udn.com/news/breaknews/1')
+    doc1 = Nokogiri::HTML(response1.body)
+    @news_href = doc1.css('div.story-list__text h2 a').map { |a| a['href'] }
+
+    
+    @new_id = params[:id]
+    response = RestClient.get("https://udn.com/"+@news_href[@new_id.to_i])
+    doc = Nokogiri::HTML(response.body)
+    @news_titles = doc.css("p").map(&:text) 
+    # binding.pry
   end
 
   private

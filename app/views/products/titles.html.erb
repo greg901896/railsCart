@@ -1,0 +1,8 @@
+
+<% @news_titles.each do |title| %>
+  <% if title != ""%>
+    <%= content_tag :div, title, class: "news-title" %>
+    <br>
+  <% end %>
+<% end %> 
+

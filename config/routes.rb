@@ -36,6 +36,7 @@ Rails.application.routes.draw do
     end
     collection do
        post :test , path: "test/:id"
+       get :titles #, path: "titles/:id"
     end 
     end
 

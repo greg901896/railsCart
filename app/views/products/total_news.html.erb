@@ -1,15 +1,13 @@
-<h1>最新新聞標題</h1>
-
+<h1>即時新聞</h1>
+<br>
 <ul>
-  <% @news_titles.each do |title| %>
-    <li><%= title %></li>
+  <% @news_titles.each_with_index do |title, index| %>
+    <br>
+    <%= link_to ((index+1).to_s + ". " + title), titles_products_path(id: index), class: "news-link large-text" %>
     <br>
   <% end %>
 </ul>
 
 
-<ul>
-    <%= @doc%>
-</ul>
 
 <%= link_to '返回商品列表', products_path, class: "btn btn-default" %>

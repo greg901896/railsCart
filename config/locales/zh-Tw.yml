@@ -27,7 +27,7 @@ zh-TW:
   addCart: "放到購物車"
   edit: "編輯"
   delete: "刪除"
-
+  description: "描述"
   deleteCart : "清空購物車" #購物車
   #projectName
   #projectCount
@@ -82,6 +82,11 @@ zh-TW:
   news: "新聞"
   realprodcut: "實體商品"
   digitalproduct: "電子商品"
+
+  select_type: "選擇商品類型"
+
+
+
   errors: 
     not_found: "找不到頁面"
 

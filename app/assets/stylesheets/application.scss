@@ -4,6 +4,12 @@
 // 自訂導航列字體大小
 .navbar-nav .nav-link {
   font-size: 1.5rem; // 調整字體大小
+  color: inherit; // 恢復其他連結的顏色
+}
+
+// 專門設置 news 連結為紅色
+.navbar-nav .nav-link.news-link {
+  color: rgb(209, 51, 51) !important; // 強制設定 news 連結字體顏色為紅色
 }
 
 // 自訂表格字體大小
@@ -14,5 +20,15 @@
 // 自訂按鈕字體大小
 .btn {
   font-size: 1.7rem; // 調整按鈕字體大小
+}
+
+// 自訂新聞標題字體大小
+.news-title {
+  font-size: 2.2rem; // 調整字體大小
+}
+
+// 自訂新聞連結字體大小
+.large-text {
+  font-size: 2.2rem; // 調整字體大小
 }
 

@@ -56,5 +56,6 @@ ru:
   news: "Новости"
   realprodcut: "Товары"
   digitalproduct: "Услуги"
-  
-  
+  description: "Описание"
+  name: "Название"
+  select_type: "Выберите тип товара"
