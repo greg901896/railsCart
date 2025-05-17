@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
     before_action :find_order ,:index
+    include Pagy::Backend
+
     def index
         @check = Checkout.where("user_id = ?",current_user.id)
         @new_check = OrderItem.where(order_id: params[:id])
@@ -9,7 +11,8 @@ class OrdersController < ApplicationController
     end
 
     def code
-        @key = Productkey.where("user_id = ?",current_user.id)
+        # @key = Productkey.where("user_id = ?",current_user.id)
+        @pagy, @key = pagy(Productkey.where("user_id = ?",current_user.id), items: 2)
     end
 
     def find_order
