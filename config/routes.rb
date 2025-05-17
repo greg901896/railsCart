@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :cats
   devise_for :users
   resources :gregs
   
@@ -7,7 +8,6 @@ Rails.application.routes.draw do
   resources :candidates do
     member do
       post :vote
-      
       end
     end
   
@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   end
 
   resources :newgregs do
-    end
+  end
+
   resources :homes do
     collection do
       get 't1'
@@ -26,8 +27,8 @@ Rails.application.routes.draw do
       get "t3"
     end
   end
+
   get "test" , to:"products#test"
-  
   
   resources :products do 
     member do 
@@ -43,7 +44,6 @@ Rails.application.routes.draw do
   resources :users do
   end
 
-
   resource :cart, only:[:show, :destroy] do
     collection do
       post :add, path:'add/:id'
@@ -52,8 +52,6 @@ Rails.application.routes.draw do
     end
   end
   
-
-
   get "up" => "rails/health#show", as: :rails_health_check
   root "homes#index"
   # Defines the root path route ("/")
